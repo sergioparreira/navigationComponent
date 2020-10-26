@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/fragmentDestination1"
+        android:name="com.example.navigation.FragmentDestination1"
+        android:label="Destino 1"
+        tools:layout="@layout/fragment_destination1" >
+        <argument
+            android:name="codigoPassado"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigation.MainFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/main_to_destination1"
+            app:destination="@id/fragmentDestination1" />
+    </fragment>
+</navigation>
